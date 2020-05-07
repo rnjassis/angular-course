@@ -6,5 +6,5 @@ Has the most basic aspects of Angular - components, basic directives (ngIf) data
 ## Common commands
 ```sh
 ng new <name-of-project>
-ng g c <name-of-component>
+ng g c <name-of-component> --skipTests true
 ```

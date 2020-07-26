@@ -13,7 +13,7 @@ import { NgModule } from '@angular/core';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forChild([{path: 'auth', component: AuthComponent}]),
+    RouterModule.forChild([{path: '', component: AuthComponent}]),
     SharedModule
   ]
 })

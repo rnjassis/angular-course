@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, tap } from 'rxjs/operators';
@@ -21,8 +22,8 @@ export class AuthService {
   user = new BehaviorSubject<User>(null);
   private tokenExpirationTimer: any;
 
-  signInLink = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDgBPTGC2TLUQQtMp9fuxt2m68a-rSQjzA';
-  signUpLink = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDgBPTGC2TLUQQtMp9fuxt2m68a-rSQjzA';
+  signInLink = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + environment.firebaseApiKey;
+  signUpLink = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + environment.firebaseApiKey;
 
   signup(mail: string, pass: string) {
     return this.http.post<AuthResponseData>(this.signUpLink,
